@@ -1,0 +1,74 @@
+/* 
+.header,.main, .nav, .ad , .aside , .footer{
+    background-color: rebeccapurple;
+}
+.header{
+    grid-area: header;
+}
+.nav{
+    grid-area: nav;
+}
+.main{
+    grid-area: main;
+}
+.aside{
+    grid-area: aside;
+}
+.ad{
+    grid-area: ad;
+}
+.footer{
+    grid-area: footer;
+}
+/* style layout */
+/* .container{
+    display: grid;
+    gap: 20px;
+    grid-template-areas: 
+    "header header header header"
+    "nav main main aside "
+     "nav main main ad"
+     "footer footer footer footer"
+    ;
+   }
+   @media screen and (max-width:556px) {
+    .container{
+        grid-template-areas: 
+        "header "
+        "nav "
+        "main"
+        " aside "
+        "ad"
+        "footer"
+        ;
+    } */
+   /* style another way 
+   */
+   header,.main, .nav, .ad , .aside , .footer{
+    background-color: rebeccapurple;
+}
+.container{
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    grid-template-rows:100px repeat(3,1fr) ;
+    gap: 20px;
+}
+.header{
+    grid-column: 1/-1;
+}
+.nav{
+    grid-row: 2/4;
+}
+.main{
+    grid-column: 2/7;
+    grid-row: 2/4;
+}
+.aside{
+    grid-column: 7/-1;
+}
+.ad{
+    grid-column: 7/-1;
+}
+.footer{
+    grid-column: 1/-1;
+}
